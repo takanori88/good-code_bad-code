@@ -1,6 +1,6 @@
 package chap06.flag_args;
 
-public class MagicPointDamage implements Damage{
+public class MagicPointDamage implements Damage {
     private final Member member;
 
     MagicPointDamage(Member member) {
