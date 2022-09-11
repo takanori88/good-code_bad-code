@@ -9,10 +9,6 @@ public class Member {
         this.magicPoint = magicPoint;
     }
 
-    Member updatedStatus(final Member member, int hitPoint, int magicPoint){
-       return new Member(hitPoint, magicPoint);
-    }
-
     public void addState(StateType stateType) {
 
     }
