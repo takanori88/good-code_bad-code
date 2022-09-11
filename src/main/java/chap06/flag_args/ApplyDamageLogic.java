@@ -15,8 +15,8 @@ public class ApplyDamageLogic {
         damages.put(DamageType.magicPoint, magicPointDamage);
     }
 
-    void applyDamage(final DamageType damageType, final int damageAmount) {
+    public Member applyDamage(final DamageType damageType, final int damageAmount) {
         final Damage damage = damages.get(damageType);
-        damage.execute(damageAmount);
+        return damage.execute(damageAmount);
     }
 }

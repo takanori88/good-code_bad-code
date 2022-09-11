@@ -2,18 +2,20 @@ package chap06.flag_args;
 
 public class HitPointDamage implements Damage{
 
-    Member member;
+    private final Member member;
 
     HitPointDamage (Member member) {
         this.member = member;
     }
 
     @Override
-    public void execute(int damageAmount) {
-        member.hitpoint -= damageAmount;
-        if (0 < member.hitpoint) return;
+    public Member execute(int damageAmount) {
 
-        member.hitpoint = 0;
-        member.addState(StateType.dead);
+        int hitPoint = member.hitPoint -damageAmount;
+        if (0 < hitPoint) {
+            return new Member(hitPoint, member.magicPoint);
+        }
+
+        return new Member(0, member.magicPoint);
     }
 }

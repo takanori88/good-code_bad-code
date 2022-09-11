@@ -1,5 +1,5 @@
 package chap06.flag_args;
 
 public interface Damage {
-    void execute(final int damageAmount);
+    Member execute(final int damageAmount);
 }

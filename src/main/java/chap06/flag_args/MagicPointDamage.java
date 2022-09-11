@@ -1,17 +1,18 @@
 package chap06.flag_args;
 
 public class MagicPointDamage implements Damage{
-    Member member;
+    private final Member member;
 
     MagicPointDamage(Member member) {
         this.member = member;
     }
 
     @Override
-    public void execute(int damageAmount) {
-        member.magicPoint -= damageAmount;
-        if (0 < member.magicPoint) return;
-
-        member.magicPoint = 0;
+    public Member execute(int damageAmount) {
+        int magicPoint = member.magicPoint - damageAmount;
+        if (0 < magicPoint) {
+            return new Member(member.hitPoint, magicPoint);
+        }
+        return new Member(member.hitPoint, 0);
     }
 }

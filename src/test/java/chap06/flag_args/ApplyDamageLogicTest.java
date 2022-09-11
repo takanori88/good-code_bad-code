@@ -8,23 +8,19 @@ class ApplyDamageLogicTest {
 
     @Test
     void applyHitPointDamage() {
-        Member member = new Member();
-        member.hitpoint = 100;
-        member.magicPoint = 100;
+        Member member = new Member(100, 100);
         ApplyDamageLogic applyDamageLogic = new ApplyDamageLogic(member);
-        applyDamageLogic.applyDamage(DamageType.hitPoint, 100);
+        Member newMember = applyDamageLogic.applyDamage(DamageType.hitPoint, 100);
 
-        assertEquals(0, member.hitpoint);
+        assertEquals(0, newMember.hitPoint);
     }
 
     @Test
     void applyMagicPointDamage() {
-        Member member = new Member();
-        member.hitpoint = 100;
-        member.magicPoint = 100;
+        Member member = new Member(100, 100);
         ApplyDamageLogic applyDamageLogic = new ApplyDamageLogic(member);
-        applyDamageLogic.applyDamage(DamageType.magicPoint, 200);
+        Member newMember = applyDamageLogic.applyDamage(DamageType.magicPoint, 200);
 
-        assertEquals(0, member.magicPoint);
+        assertEquals(0, newMember.magicPoint);
     }
 }
