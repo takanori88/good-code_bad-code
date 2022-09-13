@@ -40,4 +40,8 @@ public class Party {
     boolean isFull() {
         return members.size() == MAX_MEMBER_COUNT;
     }
+
+    List<Member> members() {
+        return List.copyOf(members);
+    }
 }
